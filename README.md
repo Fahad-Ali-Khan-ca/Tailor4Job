@@ -87,6 +87,25 @@ Choose between `basic` and `detailed` analysis modes.
 - `basic`: Provides a high-level analysis.
 - `detailed`: Offers a more thorough comparison with suggestions for improvements.
 
+### `--token-usage` or `-t`
+ 
+Use this flag to display token usage information after processing. This includes the number of tokens used in the prompt, the completion, and the total tokens.
+ 
+**Example:**
+ 
+```bash
+python main.py --model llama3-8b-8192 --output tailored_resume.docx --analysis_mode detailed --token-usage GENERAL_RESUME.docx General_Cover_Letter.docx job_description.txt
+```
+**Output would look like**
+```
+Processing files: ('GENERAL_RESUME.docx', 'General_Cover_Letter.docx', 'job_description.txt')
+Processing completed successfully
+Prompt Tokens: 2150
+Completion Tokens: 497
+Total Tokens: 2647
+Output saved to tailored_resume.docx
+```
+
 ### Error and Debugging Information
 All debug information, such as the progress of file processing and errors, will be printed to `stderr` to avoid mixing it with normal output.
 
